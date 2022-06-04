@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditDetailDataActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Catatan PM"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/etCatatanPM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minHeight="250dp"
+            android:gravity="start"
+            android:padding="8dp"
+            android:hint="Catatan PM"/>
+
+        <TextView
+            android:id="@+id/txtUrlProfile"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etNoinduk"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etNoktp"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etNama"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etTglLahir"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etJKelamin"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etStatus"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etPendidikan"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etAgama"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etAlamat"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etAsrama"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etNoHub"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etPJawab"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etTglMasuk"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_back"
+            android:text="Simpan" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

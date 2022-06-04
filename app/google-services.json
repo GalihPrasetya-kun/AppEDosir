@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "565683142437",
+    "project_id": "aplikasiedosirdatabase-e8e09",
+    "storage_bucket": "aplikasiedosirdatabase-e8e09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565683142437:android:a2c0674ab5818efde1a4cc",
+        "android_client_info": {
+          "package_name": "com.example.aplikasiedosirdatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565683142437-7k0sjbb6k0jnj47asc0r3pi691gc29rv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplikasiedosirdatabase",
+            "certificate_hash": "c38c18c9a178f9e9cab44c25aa08b68fa397fea2"
+          }
+        },
+        {
+          "client_id": "565683142437-9qd92lmj3ap0g9bd2p6d6oqrcoc8us7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP1O9OoRt0rUdRf-juerOK7MHThqQSb10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565683142437-9qd92lmj3ap0g9bd2p6d6oqrcoc8us7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

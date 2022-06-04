@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/teal_200"
+    tools:context=".BerkasListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/back" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_berkas_identifikasi"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Form Identifikasi Calon PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_intake"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Form Intake Process" />
+
+                <Button
+                    android:id="@+id/btn_berkas_registrasi"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Form Registrasi PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_pernyataan"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Surat Pernyataan Penanggung Jawab PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_kontrak"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Kontrak Pelayanan PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_assessment"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Form Assessment PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_kunjungan"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Form Kunjungan Rumah PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_rekomendasi"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Surat Rekomendasi Dinsos Kab./Kota" />
+
+                <Button
+                    android:id="@+id/btn_berkas_kettidakmampu"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Surat Ket. Tidak Mampu" />
+
+                <Button
+                    android:id="@+id/btn_berkas_kk"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Fotocopy kk" />
+
+                <Button
+                    android:id="@+id/btn_berkas_ktp"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Fotocopy Ktp" />
+
+                <Button
+                    android:id="@+id/btn_berkas_bpjs"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="KIS/BPJS/Askes" />
+
+                <Button
+                    android:id="@+id/btn_berkas_ketsehat"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Surat Ket. Sehat dari Dokter" />
+
+                <Button
+                    android:id="@+id/btn_berkas_serah"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Berita Acara Serah Terima PM" />
+
+                <Button
+                    android:id="@+id/btn_berkas_kematian"
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:text="Surat Kematian" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

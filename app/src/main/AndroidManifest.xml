@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aplikasiedosirdatabase">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AplikasiEDosirDatabase">
+        <activity
+            android:name=".TambahBerkasSerahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasRekomendasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasRegistrasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasPernyataanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKunjunganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKontrakActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKettidakmampuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKetsehatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKematianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasIntakeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasIdentifikasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasBpjsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasAssessmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasSerahListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasRekomendasiListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasRegistrasiListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasPernyataanListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKunjunganListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKtpListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKontrakListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKettidakmampuListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKetsehatListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKematianListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasIntakeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasIdentifikasiListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasBpjsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasAssessmentListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfSerahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfRekomendasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfRegistrasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfPernyataanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKunjunganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKontrakActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKettidakmampuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKetsehatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKematianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfIntakeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfIdentifikasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfBpjsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfAssessmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasKkListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPdfKkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditCatatanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditDetailDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailDataPenerimaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahBerkasKkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainTambahBerkasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TambahDataPenerimaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BerkasListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PenerimaListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainTambahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
