@@ -19,15 +19,16 @@
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_berkas_registrasi_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_berkas_rekomendasi_list.xml" value="0.21041666666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_berkas_serah_list.xml" value="0.22447916666666667" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_data_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_detail_berkas_kk.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_detail_data_penerima.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_edit_berkas_kk.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_edit_catatan.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_edit_detail_data.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
-        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_main_berkas_list.xml" value="0.22447916666666667" />
-        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_main_tambah.xml" value="0.22447916666666667" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_main_tambah.xml" value="0.22" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_main_tambah_berkas.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_penerima_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_register.xml" value="0.22447916666666667" />
@@ -39,7 +40,7 @@
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kematian.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_ketsehat.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kettidakmampu.xml" value="0.22447916666666667" />
-        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kk.xml" value="0.22447916666666667" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kk.xml" value="0.25" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kontrak.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_ktp.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kunjungan.xml" value="0.22447916666666667" />

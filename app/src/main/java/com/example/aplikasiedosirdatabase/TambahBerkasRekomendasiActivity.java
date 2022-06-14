@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasKk.KkListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasRekomendasiActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaRekomendasi, etTglLahirRekomendasi;
 
+    ImageView imgRekomendasiDelete, imgRekomendasiPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasRekomendasiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_rekomendasi);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Rekomendasi");
+
+        imgRekomendasiPdf = findViewById(R.id.imgRekomendasi_pdf);
+        imgRekomendasiDelete = findViewById(R.id.imgRekomendasi_delete);
+
+        imgRekomendasiPdf.setVisibility(View.INVISIBLE);
+        imgRekomendasiDelete.setVisibility(View.INVISIBLE);
+
+        imgRekomendasiDelete.setOnClickListener(v -> {
+            imgRekomendasiPdf.setVisibility(View.INVISIBLE);
+            imgRekomendasiDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaRekomendasi = findViewById(R.id.etNamaRekomendasi);
         etTglLahirRekomendasi = findViewById(R.id.etTglLahirRekomendasi);
@@ -123,6 +138,8 @@ public class TambahBerkasRekomendasiActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgRekomendasiPdf.setVisibility(View.VISIBLE);
+            imgRekomendasiDelete.setVisibility(View.VISIBLE);
         }
     }
 

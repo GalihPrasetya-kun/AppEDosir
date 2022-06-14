@@ -8,26 +8,22 @@
     android:background="@color/teal_200"
     tools:context=".MainTambahActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/back" />
-
-    </LinearLayout>
+        android:drawableEnd="@drawable/back"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"/>
 
     <Button
         android:id="@+id/btn_tambah_data"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:layout_marginTop="200dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="50dp"
+        android:drawableLeft="@drawable/add_profile"
         android:text="Tambah Data Penerima Manfaat" />
 
     <Button
@@ -36,6 +32,7 @@
         android:layout_height="130dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:drawableLeft="@drawable/add_file"
         android:text="Tambah Berkas Penerima Manfaat"
         android:layout_centerInParent="true"
         android:layout_below="@+id/btn_tambah_data"/>

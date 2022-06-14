@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiEDosirDatabase">
         <activity
+            android:name=".DataListActivity"
+            android:exported="false" />
+        <activity
             android:name=".TambahBerkasSerahActivity"
             android:exported="false" />
         <activity

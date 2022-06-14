@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasIntake.IntakeListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasIntakeActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaIntake, etTglLahirIntake;
 
+    ImageView imgIntakeDelete, imgIntakePdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasIntakeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_intake);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Intake");
+
+        imgIntakePdf = findViewById(R.id.imgIntake_pdf);
+        imgIntakeDelete = findViewById(R.id.imgIntake_delete);
+
+        imgIntakePdf.setVisibility(View.INVISIBLE);
+        imgIntakeDelete.setVisibility(View.INVISIBLE);
+
+        imgIntakeDelete.setOnClickListener(v -> {
+            imgIntakePdf.setVisibility(View.INVISIBLE);
+            imgIntakeDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaIntake = findViewById(R.id.etNamaIntake);
         etTglLahirIntake = findViewById(R.id.etTglLahirIntake);
@@ -123,6 +138,8 @@ public class TambahBerkasIntakeActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgIntakePdf.setVisibility(View.VISIBLE);
+            imgIntakeDelete.setVisibility(View.VISIBLE);
         }
     }
 

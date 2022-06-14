@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasKetSehat.KetSehatListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasKetsehatActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKetsehat, etTglLahirKetsehat;
 
+    ImageView imgKetsehatDelete, imgKetsehatPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasKetsehatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_ketsehat);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Ketsehat");
+
+        imgKetsehatPdf = findViewById(R.id.imgKetsehat_pdf);
+        imgKetsehatDelete = findViewById(R.id.imgKetsehat_delete);
+
+        imgKetsehatPdf.setVisibility(View.INVISIBLE);
+        imgKetsehatDelete.setVisibility(View.INVISIBLE);
+
+        imgKetsehatDelete.setOnClickListener(v -> {
+            imgKetsehatPdf.setVisibility(View.INVISIBLE);
+            imgKetsehatDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaKetsehat = findViewById(R.id.etNamaKetsehat);
         etTglLahirKetsehat = findViewById(R.id.etTglLahirKetsehat);
@@ -123,6 +138,8 @@ public class TambahBerkasKetsehatActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgKetsehatPdf.setVisibility(View.VISIBLE);
+            imgKetsehatDelete.setVisibility(View.VISIBLE);
         }
     }
 

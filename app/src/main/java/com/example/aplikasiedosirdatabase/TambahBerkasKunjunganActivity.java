@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasKk.KkListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasKunjunganActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKunjungan, etTglLahirKunjungan;
 
+    ImageView imgKunjunganDelete, imgKunjunganPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasKunjunganActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_kunjungan);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Kunjungan");
+
+        imgKunjunganPdf = findViewById(R.id.imgKunjungan_pdf);
+        imgKunjunganDelete = findViewById(R.id.imgKunjungan_delete);
+
+        imgKunjunganPdf.setVisibility(View.INVISIBLE);
+        imgKunjunganDelete.setVisibility(View.INVISIBLE);
+
+        imgKunjunganDelete.setOnClickListener(v -> {
+            imgKunjunganPdf.setVisibility(View.INVISIBLE);
+            imgKunjunganDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaKunjungan = findViewById(R.id.etNamaKunjungan);
         etTglLahirKunjungan = findViewById(R.id.etTglLahirKunjungan);
@@ -123,6 +138,8 @@ public class TambahBerkasKunjunganActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgKunjunganPdf.setVisibility(View.VISIBLE);
+            imgKunjunganDelete.setVisibility(View.VISIBLE);
         }
     }
 

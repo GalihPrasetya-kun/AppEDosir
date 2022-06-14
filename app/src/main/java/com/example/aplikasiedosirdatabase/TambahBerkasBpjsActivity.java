@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasBpjs.BpjsListModel;
@@ -33,6 +35,8 @@ public class TambahBerkasBpjsActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaBpjs, etTglLahirBpjs;
 
+    ImageView imgBpjsDelete, imgBpjsPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -42,6 +46,17 @@ public class TambahBerkasBpjsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_bpjs);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Bpjs");
+
+        imgBpjsPdf = findViewById(R.id.imgBpjs_pdf);
+        imgBpjsDelete = findViewById(R.id.imgBpjs_delete);
+
+        imgBpjsPdf.setVisibility(View.INVISIBLE);
+        imgBpjsDelete.setVisibility(View.INVISIBLE);
+
+        imgBpjsDelete.setOnClickListener(v -> {
+            imgBpjsPdf.setVisibility(View.INVISIBLE);
+            imgBpjsDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaBpjs = findViewById(R.id.etNamaBpjs);
         etTglLahirBpjs = findViewById(R.id.etTglLahirBpjs);
@@ -122,6 +137,8 @@ public class TambahBerkasBpjsActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgBpjsPdf.setVisibility(View.VISIBLE);
+            imgBpjsDelete.setVisibility(View.VISIBLE);
         }
     }
 

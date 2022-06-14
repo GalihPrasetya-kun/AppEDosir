@@ -17,17 +17,19 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="50dp"
+        android:drawableLeft="@drawable/add_data"
         android:text="Tambah Data" />
 
     <Button
         android:id="@+id/btn_penerima"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:layout_below="@+id/btn_tambah"
+        android:layout_centerInParent="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:text="Data Penerima Manfaat"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/btn_tambah"/>
+        android:drawableLeft="@drawable/profile_pm"
+        android:text="Data Penerima Manfaat" />
 
     <Button
         android:id="@+id/btn_berkas"
@@ -35,15 +37,18 @@
         android:layout_height="130dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:drawableLeft="@drawable/desain_folder_1"
         android:text="Berkas Penerima Manfaat"
         android:layout_centerInParent="true"
         android:layout_below="@+id/btn_penerima"/>
 
     <Button
         android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:drawableRight="@drawable/logout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
         android:text="Logout" />
 
 </RelativeLayout>

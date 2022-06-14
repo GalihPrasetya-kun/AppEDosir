@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,24 +25,29 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 public class DataRecyclerAdapter {
     static Context mContext;
     DataListAdapter mDataAdapter;
+    DataListAdapter mSearchAdapter;
 
     public void setConfig(RecyclerView recyclerView, Context context, List<DataListModel> list, List<String> keys){
         mContext = context;
-        mDataAdapter = new DataListAdapter(list, keys);
+        mDataAdapter = new DataListAdapter(list, keys, mDataAdapter.dataClickListener);
+        mSearchAdapter = new DataListAdapter(list, keys, mSearchAdapter.dataClickListener);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(mDataAdapter);
     }
 
     static class DataListView extends RecyclerView.ViewHolder{
         TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtNohub, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
+        ImageView image;
         String key;
 
         public DataListView(ViewGroup parent){
             super(LayoutInflater.from(mContext).inflate(R.layout.item_data, parent, false));
+            image = (ImageView) itemView.findViewById(R.id.image);
             txtUrlProfile = (TextView) itemView.findViewById(R.id.txtUrlProfile);
             txtNoinduk = (TextView) itemView.findViewById(R.id.txtNoinduk);
             txtNama = (TextView) itemView.findViewById(R.id.txtNama);
@@ -107,12 +113,18 @@ public class DataRecyclerAdapter {
     public static class DataListAdapter extends RecyclerView.Adapter<DataListView> implements Filterable {
         List<DataListModel> mlist;
         List<String> mkeys;
-        List<DataListModel> mlistFull;
+        List<DataListModel> mlistFull = new ArrayList<>();
+        public DataClickListener dataClickListener;
 
-        public DataListAdapter(List<DataListModel> mlist, List<String> mkeys) {
+        public interface DataClickListener{
+            void selectData(DataListModel dataListModel);
+        }
+
+        public DataListAdapter(List<DataListModel> mlist, List<String> mkeys, DataClickListener dataClickListener) {
             this.mlist = mlist;
             this.mkeys = mkeys;
-            mlistFull = new ArrayList<>(mlist);
+        //    this.mlistFull = mlistFull;
+        //    this.dataClickListener = dataClickListener;
         }
 
         @NonNull
@@ -133,33 +145,34 @@ public class DataRecyclerAdapter {
 
         @Override
         public Filter getFilter() {
+            Filter filter = new Filter() {
+                @Override
+                protected FilterResults performFiltering(CharSequence charSequence) {
+                    FilterResults filterResults = new FilterResults();
+                    if (charSequence == null || charSequence.length() == 0){
+                        filterResults.values = mlistFull;
+                        filterResults.count = mlistFull.size();
+                    }else {
+                        String searchStr = charSequence.toString().toLowerCase(Locale.ROOT);
+                        List<DataListModel> dataModel = new ArrayList<>();
+                        for (DataListModel listModel: mlistFull){
+                            if (listModel.getNama().toLowerCase(Locale.ROOT).contains(searchStr)){
+                                dataModel.add(listModel);
+                            }
+                        }
+                        filterResults.values = dataModel;
+                        filterResults.count = dataModel.size();
+                    }
+                    return filterResults;
+                }
+
+                @Override
+                protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                    mlist = (List<DataListModel>) filterResults.values;
+                    notifyDataSetChanged();
+                }
+            };
             return filter;
         }
-
-        Filter filter = new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                List<DataListModel> filteredList = new ArrayList<>();
-                if (charSequence.toString().isEmpty()){
-                    filteredList.addAll(mlistFull);
-                }else {
-                    for (DataListModel list: mlistFull){
-                        if (list.getNama().toLowerCase().contains(charSequence.toString().toLowerCase())){
-                            filteredList.add(list);
-                        }
-                    }
-                }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = filteredList;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                mlist.clear();
-                mlist.addAll((List<DataListModel>) filterResults.values);
-                notifyDataSetChanged();
-            }
-        };
     }
 }

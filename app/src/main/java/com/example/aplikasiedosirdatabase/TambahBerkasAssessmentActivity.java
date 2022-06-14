@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasAssessment.AssessmentListModel;
@@ -33,6 +35,8 @@ public class TambahBerkasAssessmentActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaAssessment, etTglLahirAssessment;
 
+    ImageView imgAssessmentDelete, imgAssessmentPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasAssessmentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_assessment);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Assessment");
+
+        imgAssessmentPdf = findViewById(R.id.imgAssessment_pdf);
+        imgAssessmentDelete = findViewById(R.id.imgAssessment_delete);
+
+        imgAssessmentPdf.setVisibility(View.INVISIBLE);
+        imgAssessmentDelete.setVisibility(View.INVISIBLE);
+
+        imgAssessmentDelete.setOnClickListener(v -> {
+            imgAssessmentPdf.setVisibility(View.INVISIBLE);
+            imgAssessmentDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaAssessment = findViewById(R.id.etNamaAssessment);
         etTglLahirAssessment = findViewById(R.id.etTglLahirAssessment);
@@ -123,6 +138,8 @@ public class TambahBerkasAssessmentActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgAssessmentPdf.setVisibility(View.VISIBLE);
+            imgAssessmentDelete.setVisibility(View.VISIBLE);
         }
     }
 

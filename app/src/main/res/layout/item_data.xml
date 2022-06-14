@@ -5,17 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    app:cardCornerRadius="3dp"
+    app:cardCornerRadius="15dp"
     app:cardElevation="5dp"
     android:outlineAmbientShadowColor="@color/black"
     android:layout_margin="8dp"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profile_information"/>
 
         <TextView
             android:id="@+id/txtUrlProfile"
@@ -26,6 +31,9 @@
             android:id="@+id/txtNoinduk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="12dp"
+            android:layout_toRightOf="@+id/image"
             android:textStyle="bold"
             android:text="No Induk"
             android:textSize="24sp" />
@@ -34,6 +42,9 @@
             android:id="@+id/txtNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_toRightOf="@+id/image"
+            android:layout_below="@+id/txtNoinduk"
             android:text="Nama"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -98,6 +109,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

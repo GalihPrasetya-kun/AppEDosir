@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasKk.KkListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasKontrakActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKontrak, etTglLahirKontrak;
 
+    ImageView imgKontrakDelete, imgKontrakPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasKontrakActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_kontrak);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Kontrak");
+
+        imgKontrakPdf = findViewById(R.id.imgKontrak_pdf);
+        imgKontrakDelete = findViewById(R.id.imgKontrak_delete);
+
+        imgKontrakPdf.setVisibility(View.INVISIBLE);
+        imgKontrakDelete.setVisibility(View.INVISIBLE);
+
+        imgKontrakDelete.setOnClickListener(v -> {
+            imgKontrakPdf.setVisibility(View.INVISIBLE);
+            imgKontrakDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaKontrak = findViewById(R.id.etNamaKontrak);
         etTglLahirKontrak = findViewById(R.id.etTglLahirKontrak);
@@ -123,6 +138,8 @@ public class TambahBerkasKontrakActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgKontrakPdf.setVisibility(View.VISIBLE);
+            imgKontrakDelete.setVisibility(View.VISIBLE);
         }
     }
 

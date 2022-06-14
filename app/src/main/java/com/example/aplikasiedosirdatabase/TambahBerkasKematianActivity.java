@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasKematian.KematianListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasKematianActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKematian, etTglLahirKematian;
 
+    ImageView imgKematianDelete, imgKematianPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasKematianActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_kematian);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Kematian");
+
+        imgKematianPdf = findViewById(R.id.imgKematian_pdf);
+        imgKematianDelete = findViewById(R.id.imgKematian_delete);
+
+        imgKematianPdf.setVisibility(View.INVISIBLE);
+        imgKematianDelete.setVisibility(View.INVISIBLE);
+
+        imgKematianDelete.setOnClickListener(v -> {
+            imgKematianPdf.setVisibility(View.INVISIBLE);
+            imgKematianDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaKematian = findViewById(R.id.etNamaKematian);
         etTglLahirKematian = findViewById(R.id.etTglLahirKematian);
@@ -123,6 +138,8 @@ public class TambahBerkasKematianActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgKematianPdf.setVisibility(View.VISIBLE);
+            imgKematianDelete.setVisibility(View.VISIBLE);
         }
     }
 

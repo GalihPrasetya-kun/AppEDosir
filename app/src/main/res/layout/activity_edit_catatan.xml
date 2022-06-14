@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal_200"
     tools:context=".EditDetailDataActivity">
 
     <LinearLayout
@@ -20,15 +21,24 @@
             android:gravity="center"
             android:textSize="30dp"/>
 
-        <EditText
-            android:id="@+id/etCatatanPM"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine|textCapSentences"
-            android:minHeight="250dp"
-            android:gravity="start"
-            android:padding="8dp"
-            android:hint="Catatan PM"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etCatatanPM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minHeight="250dp"
+                android:gravity="start"
+                android:padding="8dp"
+                android:hint="Catatan PM"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txtUrlProfile"
@@ -102,14 +112,15 @@
 
         <Button
             android:id="@+id/btn_save"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/btn_back"
+            android:drawableLeft="@drawable/save"
             android:text="Simpan" />
 
         <Button
             android:id="@+id/btn_back"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kembali"
             android:layout_alignParentBottom="true"

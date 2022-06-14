@@ -9,8 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aplikasiedosirdatabase.ModelBerkas.BerkasIndentifikasi.IdentifikasiListModel;
@@ -34,6 +36,8 @@ public class TambahBerkasIdentifikasiActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaIdentifikasi, etTglLahirIdentifikasi;
 
+    ImageView imgIdentifikasiDelete, imgIdentifikasiPdf;
+
     StorageReference mStore;
     DatabaseReference mData;
 
@@ -43,6 +47,17 @@ public class TambahBerkasIdentifikasiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tambah_berkas_identifikasi);
         mStore = FirebaseStorage.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference("Berkas Identifikasi");
+
+        imgIdentifikasiPdf = findViewById(R.id.imgIdentifikasi_pdf);
+        imgIdentifikasiDelete = findViewById(R.id.imgIdentifikasi_delete);
+
+        imgIdentifikasiPdf.setVisibility(View.INVISIBLE);
+        imgIdentifikasiDelete.setVisibility(View.INVISIBLE);
+
+        imgIdentifikasiDelete.setOnClickListener(v -> {
+            imgIdentifikasiPdf.setVisibility(View.INVISIBLE);
+            imgIdentifikasiDelete.setVisibility(View.INVISIBLE);
+        });
 
         etNamaIdentifikasi = findViewById(R.id.etNamaIdentifikasi);
         etTglLahirIdentifikasi = findViewById(R.id.etTglLahirIdentifikasi);
@@ -123,6 +138,8 @@ public class TambahBerkasIdentifikasiActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
+            imgIdentifikasiPdf.setVisibility(View.VISIBLE);
+            imgIdentifikasiDelete.setVisibility(View.VISIBLE);
         }
     }
 

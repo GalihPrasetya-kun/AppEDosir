@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:orientation="vertical"
+    android:background="@color/teal_200"
     tools:context=".TambahBerkasRegistrasiActivity">
 
     <LinearLayout
@@ -25,6 +26,7 @@
             android:layout_marginLeft="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/save"
             android:text="Simpan Data" />
 
     </LinearLayout>
@@ -33,39 +35,77 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
-
-        <EditText
-            android:id="@+id/etNamaRegistrasi"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nama" />
+            android:layout_height="180dp"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tempat Tanggal Lahir"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
 
-        <EditText
-            android:id="@+id/etTglLahirRegistrasi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tempat Tanggal Lahir" />
+            <EditText
+                android:id="@+id/etNamaRegistrasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tempat Tanggal Lahir"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/etTglLahirRegistrasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tempat Tanggal Lahir" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_pilihFileRegistrasi"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pilih File"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgRegistrasi_delete"
+                android:layout_width="150dp"
+                android:layout_height="180dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:src="@drawable/file_pdf" />
+
+            <ImageView
+                android:id="@+id/imgRegistrasi_pdf"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="228dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="127dp"
+                android:src="@drawable/delete" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
