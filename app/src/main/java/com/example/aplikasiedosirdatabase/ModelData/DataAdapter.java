@@ -45,7 +45,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
         String agama = dataListModel.getAgama();
         String alamat = dataListModel.getAlamat();
         String asrama = dataListModel.getAsrama();
-        String nohub = dataListModel.getNohub();
         String pjawab = dataListModel.getPjawab();
         String tglmasuk = dataListModel.getTglmasuk();
         String cacatan = dataListModel.getCatatanpm();
@@ -61,7 +60,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
         holder.txtAgama.setText(agama);
         holder.txtAlamat.setText(alamat);
         holder.txtAsrama.setText(asrama);
-        holder.txtNohub.setText(nohub);
         holder.txtPjawab.setText(pjawab);
         holder.txtTglmasuk.setText(tglmasuk);
         holder.txtCatatanPM.setText(cacatan);
@@ -75,7 +73,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
     }
 
     public class DataViewHolder extends RecyclerView.ViewHolder{
-        TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtNohub, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
+        TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
         ImageView image;
         public DataViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,7 +89,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
             txtAgama = (TextView) itemView.findViewById(R.id.txtAgama);
             txtAlamat = (TextView) itemView.findViewById(R.id.txtAlamat);
             txtAsrama = (TextView) itemView.findViewById(R.id.txtAsrama);
-            txtNohub = (TextView) itemView.findViewById(R.id.txtNoHub);
             txtPjawab = (TextView) itemView.findViewById(R.id.txtPJawab);
             txtTglmasuk = (TextView) itemView.findViewById(R.id.txtTglMasuk);
             txtCatatanPM = (TextView) itemView.findViewById(R.id.txtCatatanPM);

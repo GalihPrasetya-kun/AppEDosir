@@ -36,7 +36,7 @@ public class TambahBerkasRegistrasiActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaRegistrasi, etTglLahirRegistrasi;
 
-    ImageView imgRegistrasiDelete, imgRegistrasiPdf;
+    ImageView imgRegistrasiPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasRegistrasiActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Registrasi");
 
         imgRegistrasiPdf = findViewById(R.id.imgRegistrasi_pdf);
-        imgRegistrasiDelete = findViewById(R.id.imgRegistrasi_delete);
 
         imgRegistrasiPdf.setVisibility(View.INVISIBLE);
-        imgRegistrasiDelete.setVisibility(View.INVISIBLE);
 
-        imgRegistrasiDelete.setOnClickListener(v -> {
+        imgRegistrasiPdf.setOnClickListener(v -> {
             imgRegistrasiPdf.setVisibility(View.INVISIBLE);
-            imgRegistrasiDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaRegistrasi = findViewById(R.id.etNamaRegistrasi);
@@ -139,7 +136,6 @@ public class TambahBerkasRegistrasiActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgRegistrasiPdf.setVisibility(View.VISIBLE);
-            imgRegistrasiDelete.setVisibility(View.VISIBLE);
         }
     }
 

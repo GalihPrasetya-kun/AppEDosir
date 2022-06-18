@@ -225,20 +225,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nomor Yang Dapat Dihubungi"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/etNoHub"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="No HP" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Penanggung Jawab"
                     android:textStyle="bold"
                     android:textSize="20dp"/>

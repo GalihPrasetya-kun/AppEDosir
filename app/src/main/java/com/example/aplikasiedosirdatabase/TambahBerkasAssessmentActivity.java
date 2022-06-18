@@ -35,7 +35,7 @@ public class TambahBerkasAssessmentActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaAssessment, etTglLahirAssessment;
 
-    ImageView imgAssessmentDelete, imgAssessmentPdf;
+    ImageView imgAssessmentPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasAssessmentActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Assessment");
 
         imgAssessmentPdf = findViewById(R.id.imgAssessment_pdf);
-        imgAssessmentDelete = findViewById(R.id.imgAssessment_delete);
 
         imgAssessmentPdf.setVisibility(View.INVISIBLE);
-        imgAssessmentDelete.setVisibility(View.INVISIBLE);
 
-        imgAssessmentDelete.setOnClickListener(v -> {
+        imgAssessmentPdf.setOnClickListener(v -> {
             imgAssessmentPdf.setVisibility(View.INVISIBLE);
-            imgAssessmentDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaAssessment = findViewById(R.id.etNamaAssessment);
@@ -139,7 +136,6 @@ public class TambahBerkasAssessmentActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgAssessmentPdf.setVisibility(View.VISIBLE);
-            imgAssessmentDelete.setVisibility(View.VISIBLE);
         }
     }
 

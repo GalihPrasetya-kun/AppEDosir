@@ -35,7 +35,7 @@ public class TambahBerkasBpjsActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaBpjs, etTglLahirBpjs;
 
-    ImageView imgBpjsDelete, imgBpjsPdf;
+    ImageView imgBpjsPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -48,14 +48,11 @@ public class TambahBerkasBpjsActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Bpjs");
 
         imgBpjsPdf = findViewById(R.id.imgBpjs_pdf);
-        imgBpjsDelete = findViewById(R.id.imgBpjs_delete);
 
         imgBpjsPdf.setVisibility(View.INVISIBLE);
-        imgBpjsDelete.setVisibility(View.INVISIBLE);
 
-        imgBpjsDelete.setOnClickListener(v -> {
+        imgBpjsPdf.setOnClickListener(v -> {
             imgBpjsPdf.setVisibility(View.INVISIBLE);
-            imgBpjsDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaBpjs = findViewById(R.id.etNamaBpjs);
@@ -138,7 +135,6 @@ public class TambahBerkasBpjsActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgBpjsPdf.setVisibility(View.VISIBLE);
-            imgBpjsDelete.setVisibility(View.VISIBLE);
         }
     }
 

@@ -16,11 +16,11 @@ import com.example.aplikasiedosirdatabase.ModelData.DataListModel;
 import java.util.List;
 
 public class EditCatatanActivity extends AppCompatActivity {
-    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etNohub, etPjawab, etTglmasuk, etCatatanPM;
+    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etPjawab, etTglmasuk, etCatatanPM;
     TextView txtUrlProfile;
     Button btnSave, btnBack;
 
-    String key, noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, nohub, pjawab, tglmasuk, catatanpm, urlprofile;
+    String key, noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, pjawab, tglmasuk, catatanpm, urlprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class EditCatatanActivity extends AppCompatActivity {
         agama = getIntent().getStringExtra("agama");
         alamat = getIntent().getStringExtra("alamat");
         asrama = getIntent().getStringExtra("asrama");
-        nohub = getIntent().getStringExtra("nohub");
         pjawab = getIntent().getStringExtra("pjawab");
         tglmasuk = getIntent().getStringExtra("tglmasuk");
         catatanpm = getIntent().getStringExtra("catatanpm");
@@ -66,8 +65,6 @@ public class EditCatatanActivity extends AppCompatActivity {
         etAlamat.setText(alamat);
         etAsrama = findViewById(R.id.etAsrama);
         etAsrama.setText(asrama);
-        etNohub = findViewById(R.id.etNoHub);
-        etNohub.setText(nohub);
         etPjawab = findViewById(R.id.etPJawab);
         etPjawab.setText(pjawab);
         etTglmasuk = findViewById(R.id.etTglMasuk);
@@ -77,6 +74,7 @@ public class EditCatatanActivity extends AppCompatActivity {
 
         btnBack = findViewById(R.id.btn_back);
         btnBack.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), PenerimaListActivity.class));
             finish();
             return;
         });
@@ -97,7 +95,6 @@ public class EditCatatanActivity extends AppCompatActivity {
                 listData.setAgama(etAgama.getText().toString());
                 listData.setAlamat(etAlamat.getText().toString());
                 listData.setAsrama(etAsrama.getText().toString());
-                listData.setNohub(etNohub.getText().toString());
                 listData.setPjawab(etPjawab.getText().toString());
                 listData.setTglmasuk(etTglmasuk.getText().toString());
                 listData.setCatatanpm(etCatatanPM.getText().toString());
@@ -128,6 +125,7 @@ public class EditCatatanActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), PenerimaListActivity.class));
         finish();
         return;
     }

@@ -36,7 +36,7 @@ public class TambahBerkasKematianActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKematian, etTglLahirKematian;
 
-    ImageView imgKematianDelete, imgKematianPdf;
+    ImageView imgKematianPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasKematianActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Kematian");
 
         imgKematianPdf = findViewById(R.id.imgKematian_pdf);
-        imgKematianDelete = findViewById(R.id.imgKematian_delete);
 
         imgKematianPdf.setVisibility(View.INVISIBLE);
-        imgKematianDelete.setVisibility(View.INVISIBLE);
 
-        imgKematianDelete.setOnClickListener(v -> {
+        imgKematianPdf.setOnClickListener(v -> {
             imgKematianPdf.setVisibility(View.INVISIBLE);
-            imgKematianDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaKematian = findViewById(R.id.etNamaKematian);
@@ -139,7 +136,6 @@ public class TambahBerkasKematianActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgKematianPdf.setVisibility(View.VISIBLE);
-            imgKematianDelete.setVisibility(View.VISIBLE);
         }
     }
 

@@ -36,7 +36,7 @@ public class TambahBerkasPernyataanActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaPernyataan, etTglLahirPernyataan;
 
-    ImageView imgPernyataanDelete, imgPernyataanPdf;
+    ImageView imgPernyataanPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasPernyataanActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Pernyataan");
 
         imgPernyataanPdf = findViewById(R.id.imgPernyataan_pdf);
-        imgPernyataanDelete = findViewById(R.id.imgPernyataan_delete);
 
         imgPernyataanPdf.setVisibility(View.INVISIBLE);
-        imgPernyataanDelete.setVisibility(View.INVISIBLE);
 
-        imgPernyataanDelete.setOnClickListener(v -> {
+        imgPernyataanPdf.setOnClickListener(v -> {
             imgPernyataanPdf.setVisibility(View.INVISIBLE);
-            imgPernyataanDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaPernyataan = findViewById(R.id.etNamaPernyataan);
@@ -139,7 +136,6 @@ public class TambahBerkasPernyataanActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgPernyataanPdf.setVisibility(View.VISIBLE);
-            imgPernyataanDelete.setVisibility(View.VISIBLE);
         }
     }
 

@@ -36,7 +36,7 @@ public class TambahBerkasRekomendasiActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaRekomendasi, etTglLahirRekomendasi;
 
-    ImageView imgRekomendasiDelete, imgRekomendasiPdf;
+    ImageView imgRekomendasiPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasRekomendasiActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Rekomendasi");
 
         imgRekomendasiPdf = findViewById(R.id.imgRekomendasi_pdf);
-        imgRekomendasiDelete = findViewById(R.id.imgRekomendasi_delete);
 
         imgRekomendasiPdf.setVisibility(View.INVISIBLE);
-        imgRekomendasiDelete.setVisibility(View.INVISIBLE);
 
-        imgRekomendasiDelete.setOnClickListener(v -> {
+        imgRekomendasiPdf.setOnClickListener(v -> {
             imgRekomendasiPdf.setVisibility(View.INVISIBLE);
-            imgRekomendasiDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaRekomendasi = findViewById(R.id.etNamaRekomendasi);
@@ -139,7 +136,6 @@ public class TambahBerkasRekomendasiActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgRekomendasiPdf.setVisibility(View.VISIBLE);
-            imgRekomendasiDelete.setVisibility(View.VISIBLE);
         }
     }
 

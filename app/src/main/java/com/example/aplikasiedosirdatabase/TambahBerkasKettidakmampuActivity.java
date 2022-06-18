@@ -36,7 +36,7 @@ public class TambahBerkasKettidakmampuActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKettidakmampu, etTglLahirKettidakmampu;
 
-    ImageView imgKettidakmampuDelete, imgKettidakmampuPdf;
+    ImageView imgKettidakmampuPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasKettidakmampuActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Kettidakmampu");
 
         imgKettidakmampuPdf = findViewById(R.id.imgKettidakmampu_pdf);
-        imgKettidakmampuDelete = findViewById(R.id.imgKettidakmampu_delete);
 
         imgKettidakmampuPdf.setVisibility(View.INVISIBLE);
-        imgKettidakmampuDelete.setVisibility(View.INVISIBLE);
 
-        imgKettidakmampuDelete.setOnClickListener(v -> {
+        imgKettidakmampuPdf.setOnClickListener(v -> {
             imgKettidakmampuPdf.setVisibility(View.INVISIBLE);
-            imgKettidakmampuDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaKettidakmampu = findViewById(R.id.etNamaKettidakmampu);
@@ -139,7 +136,6 @@ public class TambahBerkasKettidakmampuActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgKettidakmampuPdf.setVisibility(View.VISIBLE);
-            imgKettidakmampuDelete.setVisibility(View.VISIBLE);
         }
     }
 

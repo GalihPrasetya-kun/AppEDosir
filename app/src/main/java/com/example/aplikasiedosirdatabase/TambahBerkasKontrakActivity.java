@@ -36,7 +36,7 @@ public class TambahBerkasKontrakActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKontrak, etTglLahirKontrak;
 
-    ImageView imgKontrakDelete, imgKontrakPdf;
+    ImageView imgKontrakPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasKontrakActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Kontrak");
 
         imgKontrakPdf = findViewById(R.id.imgKontrak_pdf);
-        imgKontrakDelete = findViewById(R.id.imgKontrak_delete);
 
         imgKontrakPdf.setVisibility(View.INVISIBLE);
-        imgKontrakDelete.setVisibility(View.INVISIBLE);
 
-        imgKontrakDelete.setOnClickListener(v -> {
+        imgKontrakPdf.setOnClickListener(v -> {
             imgKontrakPdf.setVisibility(View.INVISIBLE);
-            imgKontrakDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaKontrak = findViewById(R.id.etNamaKontrak);
@@ -139,7 +136,6 @@ public class TambahBerkasKontrakActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgKontrakPdf.setVisibility(View.VISIBLE);
-            imgKontrakDelete.setVisibility(View.VISIBLE);
         }
     }
 

@@ -30,14 +30,14 @@ import java.io.IOException;
 import java.util.List;
 
 public class EditDetailDataActivity extends AppCompatActivity {
-    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etNohub, etPjawab, etTglmasuk, etCatatanPM;
+    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etPjawab, etTglmasuk, etCatatanPM;
     TextView txtUrlProfile;
     Button btnSave, btnBack;
     Button btnPilihProfile, btnLihatProfile;
     ImageView imgProfile;
 
     String sImgProfile;
-    String key, noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, nohub, pjawab, tglmasuk, catatanpm, urlprofile;
+    String key, noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, pjawab, tglmasuk, catatanpm, urlprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,6 @@ public class EditDetailDataActivity extends AppCompatActivity {
         agama = getIntent().getStringExtra("agama");
         alamat = getIntent().getStringExtra("alamat");
         asrama = getIntent().getStringExtra("asrama");
-        nohub = getIntent().getStringExtra("nohub");
         pjawab = getIntent().getStringExtra("pjawab");
         tglmasuk = getIntent().getStringExtra("tglmasuk");
         catatanpm = getIntent().getStringExtra("catatanpm");
@@ -83,8 +82,6 @@ public class EditDetailDataActivity extends AppCompatActivity {
         etAlamat.setText(alamat);
         etAsrama = findViewById(R.id.etAsrama);
         etAsrama.setText(asrama);
-        etNohub = findViewById(R.id.etNoHub);
-        etNohub.setText(nohub);
         etPjawab = findViewById(R.id.etPJawab);
         etPjawab.setText(pjawab);
         etTglmasuk = findViewById(R.id.etTglMasuk);
@@ -135,7 +132,6 @@ public class EditDetailDataActivity extends AppCompatActivity {
                 listData.setAgama(etAgama.getText().toString());
                 listData.setAlamat(etAlamat.getText().toString());
                 listData.setAsrama(etAsrama.getText().toString());
-                listData.setNohub(etNohub.getText().toString());
                 listData.setPjawab(etPjawab.getText().toString());
                 listData.setTglmasuk(etTglmasuk.getText().toString());
                 listData.setCatatanpm(etCatatanPM.getText().toString());
@@ -193,7 +189,7 @@ public class EditDetailDataActivity extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
 
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100,stream);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 15,stream);
                 byte[] bytes = stream.toByteArray();
                 sImgProfile = Base64.encodeToString(bytes, Base64.DEFAULT);
                 txtUrlProfile.setText(sImgProfile);

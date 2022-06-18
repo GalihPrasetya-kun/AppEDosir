@@ -36,7 +36,7 @@ public class TambahBerkasKtpActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaKtp, etTglLahirKtp;
 
-    ImageView imgKtpDelete, imgKtpPdf;
+    ImageView imgKtpPdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasKtpActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Ktp");
 
         imgKtpPdf = findViewById(R.id.imgKtp_pdf);
-        imgKtpDelete = findViewById(R.id.imgKtp_delete);
 
         imgKtpPdf.setVisibility(View.INVISIBLE);
-        imgKtpDelete.setVisibility(View.INVISIBLE);
 
-        imgKtpDelete.setOnClickListener(v -> {
+        imgKtpPdf.setOnClickListener(v -> {
             imgKtpPdf.setVisibility(View.INVISIBLE);
-            imgKtpDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaKtp = findViewById(R.id.etNamaKtp);
@@ -139,7 +136,6 @@ public class TambahBerkasKtpActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgKtpPdf.setVisibility(View.VISIBLE);
-            imgKtpDelete.setVisibility(View.VISIBLE);
         }
     }
 

@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class TambahDataPenerimaActivity extends AppCompatActivity {
-    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etNohub, etPjawab, etTglmasuk, etCatatanPM;
+    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etPjawab, etTglmasuk, etCatatanPM;
     Button btnSave, btnBack;
     Button btnPilihProfile, btnLihatProfile;
     TextView txtUrlProfile;
@@ -51,7 +51,6 @@ public class TambahDataPenerimaActivity extends AppCompatActivity {
         etAgama = findViewById(R.id.etAgama);
         etAlamat = findViewById(R.id.etAlamat);
         etAsrama = findViewById(R.id.etAsrama);
-        etNohub = findViewById(R.id.etNoHub);
         etPjawab = findViewById(R.id.etPJawab);
         etTglmasuk = findViewById(R.id.etTglMasuk);
         etCatatanPM = findViewById(R.id.etCatatanPM);
@@ -100,7 +99,6 @@ public class TambahDataPenerimaActivity extends AppCompatActivity {
             listData.setAgama(etAgama.getText().toString());
             listData.setAlamat(etAlamat.getText().toString());
             listData.setAsrama(etAsrama.getText().toString());
-            listData.setNohub(etNohub.getText().toString());
             listData.setPjawab(etPjawab.getText().toString());
             listData.setTglmasuk(etTglmasuk.getText().toString());
             listData.setCatatanpm(etCatatanPM.getText().toString());

@@ -36,7 +36,7 @@ public class TambahBerkasIntakeActivity extends AppCompatActivity {
     Uri filepath;
     EditText etNamaIntake, etTglLahirIntake;
 
-    ImageView imgIntakeDelete, imgIntakePdf;
+    ImageView imgIntakePdf;
 
     StorageReference mStore;
     DatabaseReference mData;
@@ -49,14 +49,11 @@ public class TambahBerkasIntakeActivity extends AppCompatActivity {
         mData = FirebaseDatabase.getInstance().getReference("Berkas Intake");
 
         imgIntakePdf = findViewById(R.id.imgIntake_pdf);
-        imgIntakeDelete = findViewById(R.id.imgIntake_delete);
 
         imgIntakePdf.setVisibility(View.INVISIBLE);
-        imgIntakeDelete.setVisibility(View.INVISIBLE);
 
-        imgIntakeDelete.setOnClickListener(v -> {
+        imgIntakePdf.setOnClickListener(v -> {
             imgIntakePdf.setVisibility(View.INVISIBLE);
-            imgIntakeDelete.setVisibility(View.INVISIBLE);
         });
 
         etNamaIntake = findViewById(R.id.etNamaIntake);
@@ -139,7 +136,6 @@ public class TambahBerkasIntakeActivity extends AppCompatActivity {
         if (requestCode==101 && resultCode==RESULT_OK){
             filepath = data.getData();
             imgIntakePdf.setVisibility(View.VISIBLE);
-            imgIntakeDelete.setVisibility(View.VISIBLE);
         }
     }
 

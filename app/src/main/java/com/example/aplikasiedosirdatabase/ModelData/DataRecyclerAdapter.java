@@ -30,18 +30,18 @@ import java.util.Locale;
 public class DataRecyclerAdapter {
     static Context mContext;
     DataListAdapter mDataAdapter;
-    DataListAdapter mSearchAdapter;
+    //DataListAdapter mSearchAdapter;
 
     public void setConfig(RecyclerView recyclerView, Context context, List<DataListModel> list, List<String> keys){
         mContext = context;
-        mDataAdapter = new DataListAdapter(list, keys, mDataAdapter.dataClickListener);
-        mSearchAdapter = new DataListAdapter(list, keys, mSearchAdapter.dataClickListener);
+        mDataAdapter = new DataListAdapter(list, keys);
+        //mSearchAdapter = new DataListAdapter(list, keys, mSearchAdapter.dataClickListener);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(mDataAdapter);
     }
 
     static class DataListView extends RecyclerView.ViewHolder{
-        TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtNohub, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
+        TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
         ImageView image;
         String key;
 
@@ -59,7 +59,6 @@ public class DataRecyclerAdapter {
             txtAgama = (TextView) itemView.findViewById(R.id.txtAgama);
             txtAlamat = (TextView) itemView.findViewById(R.id.txtAlamat);
             txtAsrama = (TextView) itemView.findViewById(R.id.txtAsrama);
-            txtNohub = (TextView) itemView.findViewById(R.id.txtNoHub);
             txtPjawab = (TextView) itemView.findViewById(R.id.txtPJawab);
             txtTglmasuk = (TextView) itemView.findViewById(R.id.txtTglMasuk);
             txtCatatanPM = (TextView) itemView.findViewById(R.id.txtCatatanPM);
@@ -80,7 +79,6 @@ public class DataRecyclerAdapter {
                     intent.putExtra("agama", txtAgama.getText().toString());
                     intent.putExtra("alamat", txtAlamat.getText().toString());
                     intent.putExtra("asrama", txtAsrama.getText().toString());
-                    intent.putExtra("nohub", txtNohub.getText().toString());
                     intent.putExtra("pjawab", txtPjawab.getText().toString());
                     intent.putExtra("tglmasuk", txtTglmasuk.getText().toString());
                     intent.putExtra("catatanpm", txtCatatanPM.getText().toString());
@@ -102,7 +100,6 @@ public class DataRecyclerAdapter {
             txtAgama.setText(listData.getAgama());
             txtAlamat.setText(listData.getAlamat());
             txtAsrama.setText(listData.getAsrama());
-            txtNohub.setText(listData.getNohub());
             txtPjawab.setText(listData.getPjawab());
             txtTglmasuk.setText(listData.getTglmasuk());
             txtCatatanPM.setText(listData.getCatatanpm());
@@ -114,13 +111,13 @@ public class DataRecyclerAdapter {
         List<DataListModel> mlist;
         List<String> mkeys;
         List<DataListModel> mlistFull = new ArrayList<>();
-        public DataClickListener dataClickListener;
+        //public DataClickListener dataClickListener;
 
-        public interface DataClickListener{
-            void selectData(DataListModel dataListModel);
-        }
+        //public interface DataClickListener{
+        //    void selectData(DataListModel dataListModel);
+        //}
 
-        public DataListAdapter(List<DataListModel> mlist, List<String> mkeys, DataClickListener dataClickListener) {
+        public DataListAdapter(List<DataListModel> mlist, List<String> mkeys) {
             this.mlist = mlist;
             this.mkeys = mkeys;
         //    this.mlistFull = mlistFull;

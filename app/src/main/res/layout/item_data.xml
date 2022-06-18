@@ -90,11 +90,6 @@
             android:layout_height="0dp" />
 
         <TextView
-            android:id="@+id/txtNoHub"
-            android:layout_width="0dp"
-            android:layout_height="0dp" />
-
-        <TextView
             android:id="@+id/txtPJawab"
             android:layout_width="0dp"
             android:layout_height="0dp" />

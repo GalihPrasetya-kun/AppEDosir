@@ -1,13 +1,13 @@
 package com.example.aplikasiedosirdatabase.ModelData;
 
 public class DataListModel {
-    String noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, nohub, pjawab, tglmasuk, catatanpm, urlprofile;
+    String noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, pjawab, tglmasuk, catatanpm, urlprofile;
 
     public DataListModel(){
 
     }
 
-    public DataListModel(String noinduk, String noktp, String nama, String tgllahir, String jkelamin, String status, String pendidikan, String agama, String alamat, String asrama, String nohub, String pjawab, String tglmasuk, String catatanpm, String urlprofile) {
+    public DataListModel(String noinduk, String noktp, String nama, String tgllahir, String jkelamin, String status, String pendidikan, String agama, String alamat, String asrama, String pjawab, String tglmasuk, String catatanpm, String urlprofile) {
         this.noinduk = noinduk;
         this.noktp = noktp;
         this.nama = nama;
@@ -18,7 +18,6 @@ public class DataListModel {
         this.agama = agama;
         this.alamat = alamat;
         this.asrama = asrama;
-        this.nohub = nohub;
         this.pjawab = pjawab;
         this.tglmasuk = tglmasuk;
         this.catatanpm = catatanpm;
@@ -103,14 +102,6 @@ public class DataListModel {
 
     public void setAsrama(String asrama) {
         this.asrama = asrama;
-    }
-
-    public String getNohub() {
-        return nohub;
-    }
-
-    public void setNohub(String nohub) {
-        this.nohub = nohub;
     }
 
     public String getPjawab() {

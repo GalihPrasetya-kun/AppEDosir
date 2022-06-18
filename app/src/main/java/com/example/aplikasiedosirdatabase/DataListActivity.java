@@ -27,6 +27,6 @@ public class DataListActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        modelList.add(new DataListModel("islam", "jln", "bima", "aaaa", "laki", "galih", "081", "1", "1", "s1", "tijas", "belum", "pwt", "21 mei 2022", ""));
+        modelList.add(new DataListModel("islam", "jln", "bima", "aaaa", "laki", "galih", "1", "1", "s1", "tijas", "belum", "pwt", "21 mei 2022", ""));
     }
 }

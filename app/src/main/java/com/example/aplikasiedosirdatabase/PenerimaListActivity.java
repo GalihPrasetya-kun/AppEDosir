@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PenerimaListActivity extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class PenerimaListActivity extends AppCompatActivity {
 
     SearchView searchView;
     DataRecyclerAdapter.DataListAdapter adapter;
+    List<DataListModel> dataList;
 
     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference();
 
@@ -82,28 +84,18 @@ public class PenerimaListActivity extends AppCompatActivity {
     }
 
     private void searchData(String str) {
-        new DataFirebaseHelper().readData(new DataFirebaseHelper.DataStatus() {
-            @Override
-            public void DataIsLoaded(List<DataListModel> list, List<String> keys) {
-                new DataRecyclerAdapter().setConfig(mRecyclerView , PenerimaListActivity.this, list, keys);
-                adapter.getFilter().filter(str);
-            }
-
-            @Override
-            public void DataIsInserted() {
-
-            }
-
-            @Override
-            public void DataIsUpdated() {
-
-            }
-
-            @Override
-            public void DataIsDeleted() {
-
-            }
-        });
+        //final String lowercaseQuery = str.toLowerCase();
+        //final List<DataListModel> filteredModelList = new ArrayList<>();
+        //for (DataListModel model : dataList) {
+        //    final String text = model.getNama().toLowerCase();
+        //    final String ktp = model.getNoktp();
+        //    final String induk = model.getNoinduk();
+        //    if (text.contains(lowercaseQuery) || ktp.contains(lowercaseQuery) || induk.contains(lowercaseQuery)) {
+        //        filteredModelList.add(model);
+        //    }
+        //}
+        //adapter.getFilter().filter(str);
+        //mRecyclerView.setAdapter(adapter);
     }
 
     @Override
