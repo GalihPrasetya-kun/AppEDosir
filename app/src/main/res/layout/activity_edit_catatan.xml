@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_200"
+    android:background="@color/white"
     tools:context=".EditDetailDataActivity">
 
     <LinearLayout
@@ -21,9 +21,13 @@
             android:gravity="center"
             android:textSize="30dp"/>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
             android:layout_marginTop="10dp"
             android:background="@color/white"
             android:orientation="vertical">
@@ -38,7 +42,7 @@
                 android:padding="8dp"
                 android:hint="Catatan PM"/>
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/txtUrlProfile"
@@ -52,6 +56,16 @@
 
         <EditText
             android:id="@+id/etNoktp"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etNokk"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
+            android:id="@+id/etNokis"
             android:layout_width="0dp"
             android:layout_height="0dp" />
 
@@ -96,6 +110,11 @@
             android:layout_height="0dp" />
 
         <EditText
+            android:id="@+id/etRujukan"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <EditText
             android:id="@+id/etPJawab"
             android:layout_width="0dp"
             android:layout_height="0dp" />
@@ -109,6 +128,7 @@
             android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
             android:layout_above="@+id/btn_back"
             android:drawableLeft="@drawable/save"
             android:text="Simpan" />
@@ -117,6 +137,7 @@
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
             android:text="Kembali"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"/>

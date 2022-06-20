@@ -41,7 +41,7 @@ public class DataRecyclerAdapter {
     }
 
     static class DataListView extends RecyclerView.ViewHolder{
-        TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
+        TextView txtNoinduk, txtNoktp, txtNokk, txtNokis, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtRujukan, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
         ImageView image;
         String key;
 
@@ -50,6 +50,8 @@ public class DataRecyclerAdapter {
             image = (ImageView) itemView.findViewById(R.id.image);
             txtUrlProfile = (TextView) itemView.findViewById(R.id.txtUrlProfile);
             txtNoinduk = (TextView) itemView.findViewById(R.id.txtNoinduk);
+            txtNokk = (TextView) itemView.findViewById(R.id.txtNokk);
+            txtNokis = (TextView) itemView.findViewById(R.id.txtNokis);
             txtNama = (TextView) itemView.findViewById(R.id.txtNama);
             txtNoktp = (TextView) itemView.findViewById(R.id.txtNoktp);
             txtTgllahir = (TextView) itemView.findViewById(R.id.txtTglLahir);
@@ -59,6 +61,7 @@ public class DataRecyclerAdapter {
             txtAgama = (TextView) itemView.findViewById(R.id.txtAgama);
             txtAlamat = (TextView) itemView.findViewById(R.id.txtAlamat);
             txtAsrama = (TextView) itemView.findViewById(R.id.txtAsrama);
+            txtRujukan = (TextView) itemView.findViewById(R.id.txtRujukan);
             txtPjawab = (TextView) itemView.findViewById(R.id.txtPJawab);
             txtTglmasuk = (TextView) itemView.findViewById(R.id.txtTglMasuk);
             txtCatatanPM = (TextView) itemView.findViewById(R.id.txtCatatanPM);
@@ -70,6 +73,8 @@ public class DataRecyclerAdapter {
                     intent.putExtra("key", key);
                     intent.putExtra("urlprofile", txtUrlProfile.getText().toString());
                     intent.putExtra("noinduk", txtNoinduk.getText().toString());
+                    intent.putExtra("nokk", txtNokk.getText().toString());
+                    intent.putExtra("nokis", txtNokis.getText().toString());
                     intent.putExtra("noktp", txtNoktp.getText().toString());
                     intent.putExtra("nama", txtNama.getText().toString());
                     intent.putExtra("tgllahir", txtTgllahir.getText().toString());
@@ -79,6 +84,7 @@ public class DataRecyclerAdapter {
                     intent.putExtra("agama", txtAgama.getText().toString());
                     intent.putExtra("alamat", txtAlamat.getText().toString());
                     intent.putExtra("asrama", txtAsrama.getText().toString());
+                    intent.putExtra("rujukan", txtRujukan.getText().toString());
                     intent.putExtra("pjawab", txtPjawab.getText().toString());
                     intent.putExtra("tglmasuk", txtTglmasuk.getText().toString());
                     intent.putExtra("catatanpm", txtCatatanPM.getText().toString());
@@ -93,6 +99,8 @@ public class DataRecyclerAdapter {
             txtNoinduk.setText(listData.getNoinduk());
             txtNama.setText(listData.getNama());
             txtNoktp.setText(listData.getNoktp());
+            txtNokk.setText(listData.getNokk());
+            txtNokis.setText(listData.getNokis());
             txtTgllahir.setText(listData.getTgllahir());
             txtJkelamin.setText(listData.getJkelamin());
             txtStatus.setText(listData.getStatus());
@@ -100,6 +108,7 @@ public class DataRecyclerAdapter {
             txtAgama.setText(listData.getAgama());
             txtAlamat.setText(listData.getAlamat());
             txtAsrama.setText(listData.getAsrama());
+            txtRujukan.setText(listData.getRujukan());
             txtPjawab.setText(listData.getPjawab());
             txtTglmasuk.setText(listData.getTglmasuk());
             txtCatatanPM.setText(listData.getCatatanpm());

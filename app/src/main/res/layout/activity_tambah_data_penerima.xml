@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:orientation="vertical"
-    android:background="@color/teal_200"
+    android:background="@color/white"
     tools:context=".TambahDataPenerimaActivity">
 
     <LinearLayout
@@ -18,6 +18,7 @@
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
             android:text="Kembali"
             android:layout_marginBottom="10dp"/>
 
@@ -26,6 +27,7 @@
             android:layout_marginLeft="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
             android:drawableLeft="@drawable/save"
             android:text="Simpan Data" />
 
@@ -36,226 +38,281 @@
         android:padding="8dp"
         android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:outlineSpotShadowColor="@color/black"
+            android:outlineAmbientShadowColor="@color/black">
 
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:src="@drawable/add_profile"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_pilih_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="3dp"
-                    android:text="Pilih Foto"/>
-
-                <Button
-                    android:id="@+id/btn_lihat_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:text="Lihat Foto"/>
-
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:padding="10dp"
+                android:background="@color/grey"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtUrlProfile"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"/>
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="200dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/add_profile"/>
 
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No Induk"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
-
-                <EditText
-                    android:id="@+id/etNoinduk"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="No Induk" />
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="No KTP"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <Button
+                        android:id="@+id/btn_pilih_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/blue"
+                        android:layout_marginRight="3dp"
+                        android:text="Pilih Foto"/>
 
-                <EditText
-                    android:id="@+id/etNoktp"
+                    <Button
+                        android:id="@+id/btn_lihat_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/blue"
+                        android:layout_marginLeft="3dp"
+                        android:text="Lihat Foto"/>
+
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="No KTP" />
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nama"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <TextView
+                        android:id="@+id/txtUrlProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"/>
 
-                <EditText
-                    android:id="@+id/etNama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName|textCapSentences"
-                    android:hint="Nama" />
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Induk"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tempat, Tanggal Lahir"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etNoinduk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="No Induk" />
 
-                <EditText
-                    android:id="@+id/etTglLahir"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Tempat, Tanggal Lahir" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No KTP"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jenis Kelamin"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etNoktp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="No KTP" />
 
-                <EditText
-                    android:id="@+id/etJKelamin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Jenis Kelamin" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No KK"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Status Perkawinan"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etNokk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="No KK" />
 
-                <EditText
-                    android:id="@+id/etStatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Status Perkawinan" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No KIS"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pendidikan"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etNokis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="No KIS" />
 
-                <EditText
-                    android:id="@+id/etPendidikan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Pendidikan" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Agama"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName|textCapSentences"
+                        android:hint="Nama" />
 
-                <EditText
-                    android:id="@+id/etAgama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Agama" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tempat, Tanggal Lahir"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Alamat"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etTglLahir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Tempat, Tanggal Lahir" />
 
-                <EditText
-                    android:id="@+id/etAlamat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Alamat" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Kelamin"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Asrama"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etJKelamin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Jenis Kelamin" />
 
-                <EditText
-                    android:id="@+id/etAsrama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Asrama" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status Perkawinan"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Penanggung Jawab"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Status Perkawinan" />
 
-                <EditText
-                    android:id="@+id/etPJawab"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Penanggung Jawab" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pendidikan"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal Masuk"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    <EditText
+                        android:id="@+id/etPendidikan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Pendidikan" />
 
-                <EditText
-                    android:id="@+id/etTglMasuk"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text|textCapSentences"
-                    android:hint="Tanggal Masuk" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agama"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
 
-                <EditText
-                    android:id="@+id/etCatatanPM"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp" />
+                    <EditText
+                        android:id="@+id/etAgama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Agama" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/etAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Alamat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Asrama"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/etAsrama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Asrama" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rujukan"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/etRujukan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Rujukan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Penanggung Jawab"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/etPJawab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Penanggung Jawab" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Masuk"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/etTglMasuk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text|textCapSentences"
+                        android:hint="Tanggal Masuk" />
+
+                    <EditText
+                        android:id="@+id/etCatatanPM"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
     </ScrollView>
 </LinearLayout>

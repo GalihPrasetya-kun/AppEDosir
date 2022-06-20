@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1855" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1855" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_berkas_assessment_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_berkas_bpjs_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_berkas_identifikasi_list.xml" value="0.22447916666666667" />
@@ -44,7 +46,7 @@
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kontrak.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_ktp.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_kunjungan.xml" value="0.22447916666666667" />
-        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_pernyataan.xml" value="0.22239583333333332" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_pernyataan.xml" value="0.22" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_registrasi.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_rekomendasi.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/activity_tambah_berkas_serah.xml" value="0.22447916666666667" />
@@ -82,6 +84,8 @@
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/item_data_registrasi.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/item_data_rekomendasi.xml" value="0.22447916666666667" />
         <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/layout/item_data_serah.xml" value="0.22447916666666667" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1855" />
+        <entry key="..\:/Magang/AplikasiEDosirDatabase/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1855" />
       </map>
     </option>
   </component>

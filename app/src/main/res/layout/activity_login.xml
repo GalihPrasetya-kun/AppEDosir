@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/teal_200"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -35,6 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="15dp"
+        android:outlineAmbientShadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
         android:layout_centerVertical="true">
 
         <LinearLayout
@@ -46,6 +50,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/blue"
+                app:hintTextColor="@color/blue"
                 app:boxBackgroundMode="outline"
                 app:boxBackgroundColor="@color/white">
 
@@ -62,6 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                app:boxStrokeColor="@color/blue"
+                app:hintTextColor="@color/blue"
                 app:boxBackgroundMode="outline"
                 app:boxBackgroundColor="@color/white"
                 app:passwordToggleEnabled="true">
@@ -79,6 +87,7 @@
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
                 android:layout_marginTop="20dp"
                 android:text="Login" />
 

@@ -21,12 +21,12 @@ import com.example.aplikasiedosirdatabase.ModelData.DataListModel;
 import java.util.List;
 
 public class DetailDataPenerimaActivity extends AppCompatActivity {
-    TextView txtNoinduk, txtNoktp, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
+    TextView txtNoinduk, txtNoktp, txtNokk, txtNokis, txtNama, txtTgllahir, txtJkelamin, txtStatus, txtPendidikan, txtAgama, txtAlamat, txtAsrama, txtRujukan, txtPjawab, txtTglmasuk, txtCatatanPM, txtUrlProfile;
     Button btnBack, btnDelete, btnEdit, btnEditCatatan;
     Button btnLihatProfile;
     ImageView imgProfile;
 
-    String key, noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, pjawab, tglmasuk, catatanpm, urlprofile;
+    String key, noinduk, noktp, nokk, nokis, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, rujukan, pjawab, tglmasuk, catatanpm, urlprofile;
 
 
     @Override
@@ -37,6 +37,8 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
         urlprofile = getIntent().getStringExtra("urlprofile");
         noinduk = getIntent().getStringExtra("noinduk");
         noktp = getIntent().getStringExtra("noktp");
+        nokk = getIntent().getStringExtra("nokk");
+        nokis = getIntent().getStringExtra("nokis");
         nama = getIntent().getStringExtra("nama");
         tgllahir = getIntent().getStringExtra("tgllahir");
         jkelamin = getIntent().getStringExtra("jkelamin");
@@ -45,6 +47,7 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
         agama = getIntent().getStringExtra("agama");
         alamat = getIntent().getStringExtra("alamat");
         asrama = getIntent().getStringExtra("asrama");
+        rujukan = getIntent().getStringExtra("rujukan");
         pjawab = getIntent().getStringExtra("pjawab");
         tglmasuk = getIntent().getStringExtra("tglmasuk");
         catatanpm = getIntent().getStringExtra("catatanpm");
@@ -55,6 +58,10 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
         txtNoinduk.setText(noinduk);
         txtNoktp = findViewById(R.id.txtNoktp);
         txtNoktp.setText(noktp);
+        txtNokk = findViewById(R.id.txtNokk);
+        txtNokk.setText(nokk);
+        txtNokis = findViewById(R.id.txtNokis);
+        txtNokis.setText(nokis);
         txtNama = findViewById(R.id.txtNama);
         txtNama.setText(nama);
         txtTgllahir = findViewById(R.id.txtTglLahir);
@@ -71,6 +78,8 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
         txtAlamat.setText(alamat);
         txtAsrama = findViewById(R.id.txtAsrama);
         txtAsrama.setText(asrama);
+        txtRujukan = findViewById(R.id.txtRujukan);
+        txtRujukan.setText(rujukan);
         txtPjawab = findViewById(R.id.txtPJawab);
         txtPjawab.setText(pjawab);
         txtTglmasuk = findViewById(R.id.txtTglMasuk);
@@ -146,6 +155,8 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
             intent.putExtra("urlprofile", txtUrlProfile.getText().toString());
             intent.putExtra("noinduk", txtNoinduk.getText().toString());
             intent.putExtra("noktp", txtNoktp.getText().toString());
+            intent.putExtra("nokk", txtNokk.getText().toString());
+            intent.putExtra("nokis", txtNokis.getText().toString());
             intent.putExtra("nama", txtNama.getText().toString());
             intent.putExtra("tgllahir", txtTgllahir.getText().toString());
             intent.putExtra("jkelamin", txtJkelamin.getText().toString());
@@ -154,6 +165,7 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
             intent.putExtra("agama", txtAgama.getText().toString());
             intent.putExtra("alamat", txtAlamat.getText().toString());
             intent.putExtra("asrama", txtAsrama.getText().toString());
+            intent.putExtra("rujukan", txtRujukan.getText().toString());
             intent.putExtra("pjawab", txtPjawab.getText().toString());
             intent.putExtra("tglmasuk", txtTglmasuk.getText().toString());
             intent.putExtra("catatanpm", txtCatatanPM.getText().toString());
@@ -168,6 +180,8 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
             intent.putExtra("urlprofile", txtUrlProfile.getText().toString());
             intent.putExtra("noinduk", txtNoinduk.getText().toString());
             intent.putExtra("noktp", txtNoktp.getText().toString());
+            intent.putExtra("nokk", txtNokk.getText().toString());
+            intent.putExtra("nokis", txtNokis.getText().toString());
             intent.putExtra("nama", txtNama.getText().toString());
             intent.putExtra("tgllahir", txtTgllahir.getText().toString());
             intent.putExtra("jkelamin", txtJkelamin.getText().toString());
@@ -176,6 +190,7 @@ public class DetailDataPenerimaActivity extends AppCompatActivity {
             intent.putExtra("agama", txtAgama.getText().toString());
             intent.putExtra("alamat", txtAlamat.getText().toString());
             intent.putExtra("asrama", txtAsrama.getText().toString());
+            intent.putExtra("rujukan", txtRujukan.getText().toString());
             intent.putExtra("pjawab", txtPjawab.getText().toString());
             intent.putExtra("tglmasuk", txtTglmasuk.getText().toString());
             intent.putExtra("catatanpm", txtCatatanPM.getText().toString());

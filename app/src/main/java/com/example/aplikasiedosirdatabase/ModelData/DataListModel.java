@@ -1,15 +1,17 @@
 package com.example.aplikasiedosirdatabase.ModelData;
 
 public class DataListModel {
-    String noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, pjawab, tglmasuk, catatanpm, urlprofile;
+    String noinduk, noktp, nokk, nokis, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, rujukan, pjawab, tglmasuk, catatanpm, urlprofile;
 
     public DataListModel(){
 
     }
 
-    public DataListModel(String noinduk, String noktp, String nama, String tgllahir, String jkelamin, String status, String pendidikan, String agama, String alamat, String asrama, String pjawab, String tglmasuk, String catatanpm, String urlprofile) {
+    public DataListModel(String noinduk, String noktp, String nokk, String nokis, String nama, String tgllahir, String jkelamin, String status, String pendidikan, String agama, String alamat, String asrama, String rujukan, String pjawab, String tglmasuk, String catatanpm, String urlprofile) {
         this.noinduk = noinduk;
         this.noktp = noktp;
+        this.nokk = nokk;
+        this.nokis = nokis;
         this.nama = nama;
         this.tgllahir = tgllahir;
         this.jkelamin = jkelamin;
@@ -18,6 +20,7 @@ public class DataListModel {
         this.agama = agama;
         this.alamat = alamat;
         this.asrama = asrama;
+        this.rujukan = rujukan;
         this.pjawab = pjawab;
         this.tglmasuk = tglmasuk;
         this.catatanpm = catatanpm;
@@ -38,6 +41,22 @@ public class DataListModel {
 
     public void setNoktp(String noktp) {
         this.noktp = noktp;
+    }
+
+    public String getNokk() {
+        return nokk;
+    }
+
+    public void setNokk(String nokk) {
+        this.nokk = nokk;
+    }
+
+    public String getNokis() {
+        return nokis;
+    }
+
+    public void setNokis(String nokis) {
+        this.nokis = nokis;
     }
 
     public String getNama() {
@@ -102,6 +121,14 @@ public class DataListModel {
 
     public void setAsrama(String asrama) {
         this.asrama = asrama;
+    }
+
+    public String getRujukan() {
+        return rujukan;
+    }
+
+    public void setRujukan(String rujukan) {
+        this.rujukan = rujukan;
     }
 
     public String getPjawab() {

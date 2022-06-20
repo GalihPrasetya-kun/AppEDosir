@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:orientation="vertical"
-    android:background="@color/teal_200"
+    android:background="@color/white"
     tools:context=".ViewPdfPernyataanActivity">
 
     <LinearLayout
@@ -23,6 +23,7 @@
                 android:id="@+id/btn_back"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue"
                 android:layout_marginRight="10dp"
                 android:drawableEnd="@drawable/back"/>
 
@@ -30,53 +31,64 @@
                 android:id="@+id/btn_delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
                 android:drawableLeft="@drawable/delete"
                 android:layout_marginRight="10dp"
                 android:text="Hapus Data"/>
 
         </LinearLayout>
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:padding="10dp"
-            android:background="@color/white"
-            android:orientation="vertical">
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:outlineSpotShadowColor="@color/black"
+            android:outlineAmbientShadowColor="@color/black">
 
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
-
-            <TextView
-                android:id="@+id/txtNamaPernyataan"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nama"
-                android:textSize="20dp"/>
+                android:layout_height="150dp"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tempat Tanggal Lahir"
-                android:textStyle="bold"
-                android:textSize="20dp"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
 
-            <TextView
-                android:id="@+id/txtTglLahirPernyataan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tempat Tanggal Lahir"
-                android:textSize="20dp"/>
+                <TextView
+                    android:id="@+id/txtNamaPernyataan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textSize="20dp"/>
 
-            <TextView
-                android:id="@+id/txtUrlPernyataan"
-                android:layout_width="0dp"
-                android:layout_height="0dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tempat Tanggal Lahir"
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/txtTglLahirPernyataan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tempat Tanggal Lahir"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/txtUrlPernyataan"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <com.github.barteksc.pdfviewer.PDFView
             android:id="@+id/pdfViewPernyataan"

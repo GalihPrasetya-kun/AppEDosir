@@ -30,14 +30,14 @@ import java.io.IOException;
 import java.util.List;
 
 public class EditDetailDataActivity extends AppCompatActivity {
-    EditText etNoinduk, etNoktp, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etPjawab, etTglmasuk, etCatatanPM;
+    EditText etNoinduk, etNoktp, etNokk, etNokis, etNama, etTgllahir, etJkelamin, etStatus, etPendidikan, etAgama, etAlamat, etAsrama, etRujukan, etPjawab, etTglmasuk, etCatatanPM;
     TextView txtUrlProfile;
     Button btnSave, btnBack;
     Button btnPilihProfile, btnLihatProfile;
     ImageView imgProfile;
 
     String sImgProfile;
-    String key, noinduk, noktp, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, pjawab, tglmasuk, catatanpm, urlprofile;
+    String key, noinduk, noktp, nokk, nokis, nama, tgllahir, jkelamin, status, pendidikan, agama, alamat, asrama, rujukan, pjawab, tglmasuk, catatanpm, urlprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,8 @@ public class EditDetailDataActivity extends AppCompatActivity {
         urlprofile = getIntent().getStringExtra("urlprofile");
         noinduk = getIntent().getStringExtra("noinduk");
         noktp = getIntent().getStringExtra("noktp");
+        nokk = getIntent().getStringExtra("nokk");
+        nokis = getIntent().getStringExtra("nokis");
         nama = getIntent().getStringExtra("nama");
         tgllahir = getIntent().getStringExtra("tgllahir");
         jkelamin = getIntent().getStringExtra("jkelamin");
@@ -55,6 +57,7 @@ public class EditDetailDataActivity extends AppCompatActivity {
         agama = getIntent().getStringExtra("agama");
         alamat = getIntent().getStringExtra("alamat");
         asrama = getIntent().getStringExtra("asrama");
+        rujukan = getIntent().getStringExtra("rujukan");
         pjawab = getIntent().getStringExtra("pjawab");
         tglmasuk = getIntent().getStringExtra("tglmasuk");
         catatanpm = getIntent().getStringExtra("catatanpm");
@@ -66,6 +69,10 @@ public class EditDetailDataActivity extends AppCompatActivity {
         etNoinduk.setText(noinduk);
         etNoktp = findViewById(R.id.etNoktp);
         etNoktp.setText(noktp);
+        etNokk = findViewById(R.id.etNokk);
+        etNokk.setText(nokk);
+        etNokis = findViewById(R.id.etNokis);
+        etNokis.setText(nokis);
         etNama = findViewById(R.id.etNama);
         etNama.setText(nama);
         etTgllahir = findViewById(R.id.etTglLahir);
@@ -82,6 +89,8 @@ public class EditDetailDataActivity extends AppCompatActivity {
         etAlamat.setText(alamat);
         etAsrama = findViewById(R.id.etAsrama);
         etAsrama.setText(asrama);
+        etRujukan = findViewById(R.id.etRujukan);
+        etRujukan.setText(rujukan);
         etPjawab = findViewById(R.id.etPJawab);
         etPjawab.setText(pjawab);
         etTglmasuk = findViewById(R.id.etTglMasuk);
@@ -124,6 +133,8 @@ public class EditDetailDataActivity extends AppCompatActivity {
                 listData.setUrlprofile(txtUrlProfile.getText().toString());
                 listData.setNoinduk(etNoinduk.getText().toString());
                 listData.setNoktp(etNoktp.getText().toString());
+                listData.setNokk(etNokk.getText().toString());
+                listData.setNokis(etNokis.getText().toString());
                 listData.setNama(etNama.getText().toString());
                 listData.setTgllahir(etTgllahir.getText().toString());
                 listData.setJkelamin(etJkelamin.getText().toString());
@@ -132,6 +143,7 @@ public class EditDetailDataActivity extends AppCompatActivity {
                 listData.setAgama(etAgama.getText().toString());
                 listData.setAlamat(etAlamat.getText().toString());
                 listData.setAsrama(etAsrama.getText().toString());
+                listData.setRujukan(etRujukan.getText().toString());
                 listData.setPjawab(etPjawab.getText().toString());
                 listData.setTglmasuk(etTglmasuk.getText().toString());
                 listData.setCatatanpm(etCatatanPM.getText().toString());

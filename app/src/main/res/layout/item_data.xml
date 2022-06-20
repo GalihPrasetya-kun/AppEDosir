@@ -9,6 +9,7 @@
     app:cardElevation="5dp"
     android:outlineAmbientShadowColor="@color/black"
     android:layout_margin="8dp"
+    android:backgroundTint="@color/blue_2"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -55,6 +56,16 @@
             android:layout_height="0dp" />
 
         <TextView
+            android:id="@+id/txtNokk"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/txtNokis"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <TextView
             android:id="@+id/txtTglLahir"
             android:layout_width="0dp"
             android:layout_height="0dp" />
@@ -86,6 +97,11 @@
 
         <TextView
             android:id="@+id/txtAsrama"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/txtRujukan"
             android:layout_width="0dp"
             android:layout_height="0dp" />
 
